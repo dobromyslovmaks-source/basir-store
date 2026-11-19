@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="BASIR.STORE: кроссовки и одежда. Каталог с ценами, новинки, бронирование и предзаказ с самовывозом.">
+<meta name="description" content="BASIR.STORE: кроссовки и одежда. Каталог с ценами, новинки, бронирование и предзаказ. Самовывоз в Можайске и доставка СДЭК и Яндекс Доставкой.">
 <meta name="theme-color" content="#080c1b">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
@@ -198,6 +198,13 @@ section[id]{scroll-margin-top:92px}
 .msg{margin:0;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);font:500 14px/1.5 var(--font-body);white-space:pre-wrap;overflow-wrap:anywhere}
 .done-actions{display:flex;flex-direction:column;gap:10px}
 .done-lead{font-weight:600}
+.opts{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.opts legend{padding:0;margin-bottom:6px;font-size:13px;font-weight:600;color:var(--ink-dim)}
+.opt{display:flex;align-items:center;gap:12px;min-height:48px;padding:6px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);cursor:pointer}
+.opt input{width:20px;min-height:20px;height:20px;padding:0;flex:none;accent-color:#5c86ff}
+.opt small{display:block;font-size:13px;color:var(--ink-dim)}
+.opt:has(input:checked){border-color:var(--blue-hi);background:rgba(47,91,255,.16)}
+.pickup a{color:#9db7ff;text-decoration:underline}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:60;max-width:calc(100% - 32px);padding:12px 18px;border-radius:12px;background:#fff;color:#0a1030;font-weight:700;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
 </style>
 </head>
@@ -243,7 +250,7 @@ section[id]{scroll-margin-top:92px}
     <nav class="nav" aria-label="Разделы">
       <a href="#new" id="navNew">Новинки</a>
       <a href="#catalog">Каталог</a>
-      <a href="#how">Как забрать</a>
+      <a href="#how">Как получить</a>
     </nav>
     <button type="button" class="req-btn" id="openReq" aria-haspopup="dialog">Предзаказ <span class="count" id="reqCount" hidden>0</span></button>
   </div>
@@ -253,16 +260,16 @@ section[id]{scroll-margin-top:92px}
   <section class="hero" id="top">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">Самовывоз из магазина</p>
-        <h1>Выбирайте на сайте. Забирайте в магазине.</h1>
-        <p class="lede">Цены указаны прямо в каталоге. Если нужного размера нет в наличии, оформите предзаказ, и мы закажем его для вас.</p>
+        <p class="eyebrow">Самовывоз и доставка</p>
+        <h1>Выбирайте на сайте. Получайте в магазине или с доставкой.</h1>
+        <p class="lede">Цены указаны прямо в каталоге. Если нужного размера нет в наличии, оформите предзаказ, и мы закажем его для вас. Заберите заказ в Можайске или выберите доставку СДЭК или Яндекс Доставкой.</p>
         <div class="cta">
           <a class="btn btn-primary" href="#catalog">Открыть каталог</a>
           <a class="btn btn-ghost" href="#new">Смотреть новинки</a>
         </div>
         <ul class="facts">
           <li>В наличии и под заказ</li>
-          <li>Только самовывоз</li>
+          <li>Самовывоз и доставка</li>
           <li>Новинки регулярно</li>
         </ul>
       </div>
@@ -321,12 +328,12 @@ section[id]{scroll-margin-top:92px}
   <section class="sec" id="how">
     <div class="wrap">
       <div class="sec-head">
-        <h2>Как забрать заказ</h2>
+        <h2>Как получить заказ</h2>
       </div>
       <ol class="steps">
         <li><h3>Выберите</h3><p>Найдите модель и размер. Есть в наличии, значит бронируем. Нет нужного размера, значит оформляем предзаказ.</p></li>
         <li><h3>Отправьте заявку</h3><p>Соберите заявку на сайте и отправьте нам готовый текст в мессенджер.</p></li>
-        <li><h3>Заберите в магазине</h3><p>Доставки нет, только самовывоз. Приходите, когда мы подтвердим, что товар готов.</p></li>
+        <li><h3>Получите заказ</h3><p>Заберите в магазине, когда мы подтвердим, что товар готов, или выберите доставку СДЭК или Яндекс Доставкой.</p></li>
       </ol>
       <div class="pickup" id="pickup" hidden></div>
     </div>
@@ -357,9 +364,8 @@ section[id]{scroll-margin-top:92px}
 
     <div id="reqFilled" hidden>
       <ul class="lines" id="reqList"></ul>
-      <p class="total" style="margin-top:16px"><span>Итого</span><strong id="reqTotal"></strong></p>
+      <p class="total" style="margin-top:16px"><span>Итого за товары</span><strong id="reqTotal"></strong></p>
       <p class="fine" id="reqPreNote" hidden style="margin-top:6px">Сроки для позиций «под заказ» ориентировочные.</p>
-      <div class="pickup-note" style="margin-top:16px"><b>Только самовывоз из магазина</b><span id="pickupAddr"></span></div>
       <form class="form" id="reqForm" novalidate style="margin-top:16px">
         <div class="field">
           <label for="fName">Имя</label>
@@ -369,6 +375,17 @@ section[id]{scroll-margin-top:92px}
           <label for="fPhone">Телефон</label>
           <input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required>
         </div>
+        <fieldset class="opts">
+          <legend>Как получить</legend>
+          <label class="opt"><input type="radio" name="dm" value="pickup" checked><span>Самовывоз<small id="pickupAddr"></small></span></label>
+          <label class="opt"><input type="radio" name="dm" value="cdek"><span>Доставка СДЭК</span></label>
+          <label class="opt"><input type="radio" name="dm" value="yandex"><span>Доставка Яндекс Доставкой</span></label>
+        </fieldset>
+        <div class="field" id="addrWrap" hidden>
+          <label for="fAddr">Город и адрес или пункт выдачи</label>
+          <textarea id="fAddr" name="addr" placeholder="Например: Москва, ул. Тверская, 1, или адрес пункта СДЭК"></textarea>
+        </div>
+        <p class="fine" id="delivNote" hidden>Стоимость и срок доставки сообщим после подтверждения заявки.</p>
         <div class="field">
           <label for="fNote">Комментарий</label>
           <textarea id="fNote" name="note" placeholder="Например, когда удобно прийти"></textarea>
@@ -400,7 +417,7 @@ var inTG=!!(TG&&TG.initData);
 if(TG){try{TG.ready();TG.expand();TG.setHeaderColor('#080c1b');TG.setBackgroundColor('#080c1b');}catch(e){}}
 
 /* Контакты магазина. Заполненные поля появятся на сайте сами. */
-var CONFIG={telegram:'basik_96',whatsapp:'',instagram:'',phone:'',address:'',hours:''};
+var CONFIG={telegram:'basik_96',whatsapp:'',instagram:'',phone:'',address:'Московская область, Можайск, 3-я Железнодорожная улица, 10',hours:'с 9:00 до 20:00'};
 
 /* Таблица товаров в Google Таблицах (доступ «все, у кого есть ссылка», роль «Читатель»). */
 var SHEET_ID='1U6C_aneFeLrtwDD1dXgGd95LNzECI37EG0V38F_bms0';
@@ -581,13 +598,16 @@ function renderReq(){
   if(done) renderDone();
 }
 
-function buildMessage(name,phone,note){
-  var lines=['Заявка с сайта BASIR.STORE (самовывоз)','','Имя: '+name,'Телефон: '+phone,'','Товары:'];
+function buildMessage(name,phone,note,dm,addr){
+  var how=dm==='cdek'?'доставка СДЭК':dm==='yandex'?'доставка Яндекс Доставкой':('самовывоз'+(CONFIG.address?' ('+CONFIG.address+')':''));
+  var lines=['Заявка с сайта BASIR.STORE','','Имя: '+name,'Телефон: '+phone,'Получение: '+how];
+  if(dm!=='pickup'&&addr) lines.push('Адрес или пункт выдачи: '+addr);
+  lines.push('','Товары:');
   state.req.forEach(function(it,i){
     var p=byId[it.id];
     lines.push((i+1)+'. '+p.name+(it.size?', размер '+it.size:'')+' × '+it.qty+' — '+money(p.price*it.qty)+' ('+(p.status==='stock'?'в наличии':'под заказ'+(p.eta?', '+p.eta:''))+')');
   });
-  lines.push('','Итого: '+money(totalSum()));
+  lines.push('','Итого за товары: '+money(totalSum()));
   if(note) lines.push('','Комментарий: '+note);
   return plain(lines.join('\n'));
 }
@@ -644,17 +664,21 @@ function renderContacts(){
   if(CONFIG.address) rows.push(['Адрес',esc(CONFIG.address)]);
   if(CONFIG.hours) rows.push(['Часы работы',esc(CONFIG.hours)]);
   if(CONFIG.phone) rows.push(['Телефон',esc(CONFIG.phone)]);
+  if(CONFIG.address) rows.push(['На карте','<a href="'+esc('https://yandex.ru/maps/?text='+encodeURIComponent(CONFIG.address))+'" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>']);
+  rows.push(['Доставка','СДЭК и Яндекс Доставка. Стоимость и срок сообщим после подтверждения заявки.']);
   var box=$('pickup');
   if(rows.length){
-    box.innerHTML='<h3>Где забрать</h3><dl>'+rows.map(function(r){return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>';}).join('')+'</dl>';
+    box.innerHTML='<h3>Самовывоз и доставка</h3><dl>'+rows.map(function(r){return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>';}).join('')+'</dl>';
     box.hidden=false;
   }
-  $('pickupAddr').textContent=CONFIG.address?'. '+CONFIG.address:'';
+  $('pickupAddr').textContent=CONFIG.address||'';
   var f=[];
   if(CONFIG.telegram) f.push('<li><a target="_blank" rel="noopener" href="'+esc('https://t.me/'+encodeURIComponent(CONFIG.telegram))+'">Telegram</a></li>');
   if(CONFIG.whatsapp) f.push('<li><a target="_blank" rel="noopener" href="'+esc('https://wa.me/'+CONFIG.whatsapp.replace(/\D/g,''))+'">WhatsApp</a></li>');
   if(CONFIG.instagram) f.push('<li><a target="_blank" rel="noopener" href="'+esc('https://instagram.com/'+encodeURIComponent(CONFIG.instagram))+'">Instagram</a></li>');
   if(CONFIG.phone) f.push('<li>'+esc(CONFIG.phone)+'</li>');
+  if(CONFIG.address) f.push('<li>'+esc(CONFIG.address)+'</li>');
+  if(CONFIG.hours) f.push('<li>'+esc(CONFIG.hours)+'</li>');
   f.push('<li>© '+new Date().getFullYear()+' BASIR.STORE</li>');
   $('footLinks').innerHTML=f.join('');
 }
@@ -702,6 +726,14 @@ document.addEventListener('click',function(e){
 
 document.addEventListener('keydown',function(e){if(e.key==='Escape') closePanel();});
 
+function getDm(){var r=document.querySelector('input[name="dm"]:checked'); return r?r.value:'pickup';}
+function syncDelivery(){
+  var pickup=getDm()==='pickup';
+  $('addrWrap').hidden=pickup;
+  $('delivNote').hidden=pickup;
+}
+document.addEventListener('change',function(e){if(e.target&&e.target.name==='dm') syncDelivery();});
+
 $('q').addEventListener('input',function(e){state.q=e.target.value; renderCatalog();});
 $('avail').addEventListener('change',function(e){state.avail=e.target.value; renderCatalog();});
 $('sort').addEventListener('change',function(e){state.sort=e.target.value; renderCatalog();});
@@ -713,8 +745,9 @@ $('reqForm').addEventListener('submit',function(e){
   var note=$('fNote').value.trim();
   if(!name){setErr('Укажите имя.',$('fName')); return;}
   if(phone.replace(/\D/g,'').length<10){setErr('Проверьте телефон: нужно не меньше 10 цифр.',$('fPhone')); return;}
+  if(getDm()!=='pickup'&&!$('fAddr').value.trim()){setErr('Укажите город и адрес или пункт выдачи.',$('fAddr')); return;}
   setErr('');
-  state.msg=buildMessage(name,phone,note);
+  state.msg=buildMessage(name,phone,note,getDm(),$('fAddr').value.trim());
   state.view='done';
   renderReq();
   $('panel').scrollTop=0;
@@ -822,6 +855,7 @@ function start(list){
   renderChips(); renderNew(); renderCatalog(); renderReq();
 }
 renderContacts();
+syncDelivery();
 $('new').hidden=true;
 $('grid').innerHTML='<p class="found" style="grid-column:1/-1">Загружаем каталог…</p>';
 loadCatalog(start);

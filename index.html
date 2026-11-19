@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="BASIR.STORE: кроссовки и одежда. Каталог с ценами, новинки, бронирование и предзаказ. Самовывоз в Можайске и доставка СДЭК и Яндекс Доставкой.">
+<meta name="description" content="BasStore: кроссовки и одежда. Каталог с ценами, новинки, корзина, бронь в магазине в Можайске и доставка СДЭК и Яндекс Доставкой.">
 <meta name="theme-color" content="#080c1b">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
-<title>BASIR.STORE</title>
+<title>BasStore</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700&display=swap">
@@ -246,13 +246,13 @@ section[id]{scroll-margin-top:92px}
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="BASIR.STORE, наверх"><span class="b">BASIR</span><span class="w">.STORE</span></a>
+    <a class="brand" href="#top" aria-label="BasStore, наверх"><span class="b">Bas</span><span class="w">Store</span></a>
     <nav class="nav" aria-label="Разделы">
       <a href="#new" id="navNew">Новинки</a>
       <a href="#catalog">Каталог</a>
       <a href="#how">Как получить</a>
     </nav>
-    <button type="button" class="req-btn" id="openReq" aria-haspopup="dialog">Предзаказ <span class="count" id="reqCount" hidden>0</span></button>
+    <button type="button" class="req-btn" id="openReq" aria-haspopup="dialog">Корзина <span class="count" id="reqCount" hidden>0</span></button>
   </div>
 </header>
 
@@ -260,21 +260,21 @@ section[id]{scroll-margin-top:92px}
   <section class="hero" id="top">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">Самовывоз и доставка</p>
+        <p class="eyebrow">Бронь и доставка</p>
         <h1>Выбирайте на сайте. Получайте в магазине или с доставкой.</h1>
-        <p class="lede">Цены указаны прямо в каталоге. Если нужного размера нет в наличии, оформите предзаказ, и мы закажем его для вас. Заберите заказ в Можайске или выберите доставку СДЭК или Яндекс Доставкой.</p>
+        <p class="lede">Цены указаны прямо в каталоге. Если нужного размера нет в наличии, добавьте товар в корзину, и мы закажем его для вас. Заберите заказ в Можайске или выберите доставку СДЭК или Яндекс Доставкой.</p>
         <div class="cta">
           <a class="btn btn-primary" href="#catalog">Открыть каталог</a>
           <a class="btn btn-ghost" href="#new">Смотреть новинки</a>
         </div>
         <ul class="facts">
           <li>В наличии и под заказ</li>
-          <li>Самовывоз и доставка</li>
+          <li>Бронь и доставка</li>
           <li>Новинки регулярно</li>
         </ul>
       </div>
       <figure class="logo-card">
-        <img src="logo.jpg" width="640" height="640" alt="BASIR.STORE: неоновый синий кроссовок и логотип магазина">
+        <img src="logo.jpg" width="640" height="640" alt="BasStore: неоновый синий кроссовок и логотип магазина">
       </figure>
     </div>
   </section>
@@ -293,7 +293,7 @@ section[id]{scroll-margin-top:92px}
     <div class="wrap">
       <div class="sec-head">
         <h2>Каталог</h2>
-        <p>Выберите размер и нажмите кнопку на карточке. Товар попадёт в вашу заявку.</p>
+        <p>Выберите размер и добавьте товар в корзину.</p>
       </div>
       <div class="controls">
         <div class="chips" id="catChips" role="group" aria-label="Категория"></div>
@@ -331,9 +331,9 @@ section[id]{scroll-margin-top:92px}
         <h2>Как получить заказ</h2>
       </div>
       <ol class="steps">
-        <li><h3>Выберите</h3><p>Найдите модель и размер. Есть в наличии, значит бронируем. Нет нужного размера, значит оформляем предзаказ.</p></li>
-        <li><h3>Отправьте заявку</h3><p>Соберите заявку на сайте и отправьте нам готовый текст в мессенджер.</p></li>
-        <li><h3>Получите заказ</h3><p>Заберите в магазине, когда мы подтвердим, что товар готов, или выберите доставку СДЭК или Яндекс Доставкой.</p></li>
+        <li><h3>Выберите</h3><p>Найдите модель и размер и добавьте товар в корзину. Есть в наличии, значит бронируем. Нет нужного размера, значит закажем под вас.</p></li>
+        <li><h3>Оформите заказ</h3><p>Откройте корзину, выберите бронь или доставку и отправьте нам готовый заказ в мессенджер.</p></li>
+        <li><h3>Получите заказ</h3><p>Заберите бронь в магазине, когда мы подтвердим, что товар готов, или получите заказ доставкой СДЭК или Яндекс Доставкой.</p></li>
       </ol>
       <div class="pickup" id="pickup" hidden></div>
     </div>
@@ -342,7 +342,7 @@ section[id]{scroll-margin-top:92px}
 
 <footer class="foot">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="BASIR.STORE, наверх"><span class="b">BASIR</span><span class="w">.STORE</span></a>
+    <a class="brand" href="#top" aria-label="BasStore, наверх"><span class="b">Bas</span><span class="w">Store</span></a>
     <ul id="footLinks"></ul>
   </div>
 </footer>
@@ -351,14 +351,14 @@ section[id]{scroll-margin-top:92px}
   <div class="backdrop" data-close></div>
   <section class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle" tabindex="-1">
     <div class="panel-head">
-      <h2 id="panelTitle">Ваша заявка</h2>
+      <h2 id="panelTitle">Корзина</h2>
       <button type="button" class="icon-btn" data-close aria-label="Закрыть">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
     </div>
 
     <div id="reqEmpty">
-      <p class="fine" style="font-size:15px">Пока пусто. Выберите размер на карточке и нажмите «Забронировать» или «Предзаказ».</p>
+      <p class="fine" style="font-size:15px">В корзине пока пусто. Выберите размер на карточке и нажмите «Добавить в корзину».</p>
       <p style="margin-top:16px"><a class="btn btn-primary" href="#catalog" data-close>К каталогу</a></p>
     </div>
 
@@ -377,30 +377,34 @@ section[id]{scroll-margin-top:92px}
         </div>
         <fieldset class="opts">
           <legend>Как получить</legend>
-          <label class="opt"><input type="radio" name="dm" value="pickup" checked><span>Самовывоз<small id="pickupAddr"></small></span></label>
-          <label class="opt"><input type="radio" name="dm" value="cdek"><span>Доставка СДЭК</span></label>
-          <label class="opt"><input type="radio" name="dm" value="yandex"><span>Доставка Яндекс Доставкой</span></label>
+          <label class="opt"><input type="radio" name="dm" value="pickup" checked><span>Бронь в магазине<small id="pickupAddr"></small></span></label>
+          <label class="opt"><input type="radio" name="dm" value="delivery"><span>Доставка</span></label>
+        </fieldset>
+        <fieldset class="opts" id="carrierWrap" hidden>
+          <legend>Служба доставки</legend>
+          <label class="opt"><input type="radio" name="carrier" value="cdek" checked><span>СДЭК</span></label>
+          <label class="opt"><input type="radio" name="carrier" value="yandex"><span>Яндекс Доставка</span></label>
         </fieldset>
         <div class="field" id="addrWrap" hidden>
           <label for="fAddr">Город и адрес или пункт выдачи</label>
           <textarea id="fAddr" name="addr" placeholder="Например: Москва, ул. Тверская, 1, или адрес пункта СДЭК"></textarea>
         </div>
-        <p class="fine" id="delivNote" hidden>Стоимость и срок доставки сообщим после подтверждения заявки.</p>
+        <p class="fine" id="delivNote" hidden>Стоимость и срок доставки сообщим после подтверждения заказа.</p>
         <div class="field">
           <label for="fNote">Комментарий</label>
           <textarea id="fNote" name="note" placeholder="Например, когда удобно прийти"></textarea>
         </div>
         <p class="err" id="fErr" role="alert"></p>
-        <button type="submit" class="btn btn-primary btn-block">Собрать заявку</button>
+        <button type="submit" class="btn btn-primary btn-block">Оформить заказ</button>
       </form>
     </div>
 
     <div id="reqDone" hidden>
-      <p class="done-lead">Заявка собрана. Мы получим её, когда вы отправите этот текст нам.</p>
+      <p class="done-lead">Заказ готов. Мы получим его, когда вы отправите этот текст нам.</p>
       <pre class="msg" id="msgText" style="margin-top:14px"></pre>
       <div class="done-actions" id="doneActions" style="margin-top:14px"></div>
-      <p style="margin-top:10px"><button type="button" class="btn btn-ghost btn-block" id="backEdit">Изменить заявку</button></p>
-      <p style="text-align:center"><button type="button" class="link-btn" id="clearReq">Очистить заявку</button></p>
+      <p style="margin-top:10px"><button type="button" class="btn btn-ghost btn-block" id="backEdit">Вернуться в корзину</button></p>
+      <p style="text-align:center"><button type="button" class="link-btn" id="clearReq">Очистить корзину</button></p>
     </div>
   </section>
 </div>
@@ -496,7 +500,7 @@ function cardHtml(p){
       '<p class="status '+(p.status==='stock'?'ok':'wait')+'">'+esc(statusText(p))+'</p>'+
       (isNew(p)?'<p class="added">Добавлено '+df.format(new Date(addedTs(p)))+'</p>':'')+
       sizes+
-      '<button type="button" class="btn btn-primary btn-block add" data-add="'+p.id+'">'+(p.status==='stock'?'Забронировать':'Предзаказ')+'</button>'+
+      '<button type="button" class="btn btn-primary btn-block add" data-add="'+p.id+'">'+'Добавить в корзину'+'</button>'+
       '<p class="hint" aria-live="polite"></p>'+
     '</div></article>';
 }
@@ -573,7 +577,7 @@ function addToReq(id,btn){
   saveReq();
   if(state.view==='done') state.view='edit';
   renderReq();
-  toast('Добавлено в заявку: '+p.name+(size?', '+size:''));
+  toast('Добавлено в корзину: '+p.name+(size?', '+size:''));
 }
 
 function renderReq(){
@@ -599,8 +603,8 @@ function renderReq(){
 }
 
 function buildMessage(name,phone,note,dm,addr){
-  var how=dm==='cdek'?'доставка СДЭК':dm==='yandex'?'доставка Яндекс Доставкой':('самовывоз'+(CONFIG.address?' ('+CONFIG.address+')':''));
-  var lines=['Заявка с сайта BASIR.STORE','','Имя: '+name,'Телефон: '+phone,'Получение: '+how];
+  var how=dm==='delivery'?('доставка '+(getCarrier()==='yandex'?'Яндекс Доставкой':'СДЭК')):('бронь в магазине'+(CONFIG.address?' ('+CONFIG.address+')':''));
+  var lines=['Заказ с сайта BasStore','','Имя: '+name,'Телефон: '+phone,'Получение: '+how];
   if(dm!=='pickup'&&addr) lines.push('Адрес или пункт выдачи: '+addr);
   lines.push('','Товары:');
   state.req.forEach(function(it,i){
@@ -665,10 +669,10 @@ function renderContacts(){
   if(CONFIG.hours) rows.push(['Часы работы',esc(CONFIG.hours)]);
   if(CONFIG.phone) rows.push(['Телефон',esc(CONFIG.phone)]);
   if(CONFIG.address) rows.push(['На карте','<a href="'+esc('https://yandex.ru/maps/?text='+encodeURIComponent(CONFIG.address))+'" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>']);
-  rows.push(['Доставка','СДЭК и Яндекс Доставка. Стоимость и срок сообщим после подтверждения заявки.']);
+  rows.push(['Доставка','СДЭК и Яндекс Доставка. Стоимость и срок сообщим после подтверждения заказа.']);
   var box=$('pickup');
   if(rows.length){
-    box.innerHTML='<h3>Самовывоз и доставка</h3><dl>'+rows.map(function(r){return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>';}).join('')+'</dl>';
+    box.innerHTML='<h3>Бронь и доставка</h3><dl>'+rows.map(function(r){return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>';}).join('')+'</dl>';
     box.hidden=false;
   }
   $('pickupAddr').textContent=CONFIG.address||'';
@@ -679,7 +683,7 @@ function renderContacts(){
   if(CONFIG.phone) f.push('<li>'+esc(CONFIG.phone)+'</li>');
   if(CONFIG.address) f.push('<li>'+esc(CONFIG.address)+'</li>');
   if(CONFIG.hours) f.push('<li>'+esc(CONFIG.hours)+'</li>');
-  f.push('<li>© '+new Date().getFullYear()+' BASIR.STORE</li>');
+  f.push('<li>© '+new Date().getFullYear()+' BasStore</li>');
   $('footLinks').innerHTML=f.join('');
 }
 
@@ -727,8 +731,10 @@ document.addEventListener('click',function(e){
 document.addEventListener('keydown',function(e){if(e.key==='Escape') closePanel();});
 
 function getDm(){var r=document.querySelector('input[name="dm"]:checked'); return r?r.value:'pickup';}
+function getCarrier(){var r=document.querySelector('input[name="carrier"]:checked'); return r?r.value:'cdek';}
 function syncDelivery(){
   var pickup=getDm()==='pickup';
+  $('carrierWrap').hidden=pickup;
   $('addrWrap').hidden=pickup;
   $('delivNote').hidden=pickup;
 }
